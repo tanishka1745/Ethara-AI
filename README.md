@@ -67,7 +67,7 @@ npm start
 
 The application will be available at `http://localhost:3000`
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 inventory-management-system/
@@ -84,41 +84,41 @@ inventory-management-system/
 │   │   ├── schemas/
 │   │   │   └── __init__.py         # Pydantic validation schemas
 │   │   ├── routes/
-│   │   │   ├── product_routes.py   # Product CRUD endpoints
-│   │   │   ├── customer_routes.py  # Customer CRUD endpoints
-│   │   │   └── order_routes.py     # Order management endpoints
+│   │   │   ├── product_routes.py  
+│   │   │   ├── customer_routes.py  
+│   │   │   └── order_routes.py   
 │   │   ├── services/
-│   │   │   ├── product_service.py  # Product business logic
-│   │   │   ├── customer_service.py # Customer business logic
-│   │   │   └── order_service.py    # Order processing logic
+│   │   │   ├── product_service.py 
+│   │   │   ├── customer_service.py 
+│   │   │   └── order_service.py   
 │   │   ├── utils/
 │   │   │   ├── __init__.py
-│   │   │   └── exceptions.py       # Custom exceptions & error handling
+│   │   │   └── exceptions.py      
 │   │   └── config/
 │   │
-│   ├── requirements.txt             # Python dependencies
-│   ├── Dockerfile                   # Multi-stage Docker build
+│   ├── requirements.txt            
+│   ├── Dockerfile                  
 │   ├── .dockerignore
-│   ├── .env                         # Environment variables (local)
-│   └── .env.example                 # Example environment file
+│   ├── .env                         
+│   └── .env.example                
 │
 ├── frontend/
 │   ├── src/
 │   │   ├── api/
 │   │   │   └── client.js           # Axios API client
 │   │   ├── pages/
-│   │   │   ├── Dashboard.jsx       # Dashboard with analytics
-│   │   │   ├── ProductList.jsx     # View all products
-│   │   │   ├── AddProduct.jsx      # Add new product form
-│   │   │   ├── CustomerList.jsx    # View all customers
-│   │   │   ├── AddCustomer.jsx     # Add new customer form
-│   │   │   ├── OrderPage.jsx       # Create and manage orders
-│   │   │   └── *.css               # Component stylesheets
-│   │   ├── components/             # Reusable components
-│   │   ├── hooks/                  # Custom React hooks
-│   │   ├── context/                # React context providers
-│   │   ├── App.js                  # Main app component with routing
-│   │   └── App.css                 # Global styles
+│   │   │   ├── Dashboard.jsx      
+│   │   │   ├── ProductList.jsx    
+│   │   │   ├── AddProduct.jsx     
+│   │   │   ├── CustomerList.jsx   
+│   │   │   ├── AddCustomer.jsx    
+│   │   │   ├── OrderPage.jsx       
+│   │   │   └── *.css              
+│   │   ├── components/            
+│   │   ├── hooks/                 
+│   │   ├── context/               
+│   │   ├── App.js                 
+│   │   └── App.css                
 │   │
 │   ├── package.json
 │   ├── Dockerfile                  # Multi-stage Docker build
