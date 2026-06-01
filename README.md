@@ -3,13 +3,8 @@
 A full-stack web application for managing inventory with a FastAPI backend, React frontend, and PostgreSQL database. Includes product management, customer management, and order processing with automatic inventory reduction.
 
 
-## 🚀 Quick Start
+## Quick Start
 
-### Prerequisites
-- Docker & Docker Compose (recommended)
-- Python 3.11+ (for local development)
-- Node.js 18+ (for local development)
-- PostgreSQL 15+ (if running without Docker)
 
 ### Option 1: Using Docker Compose (Recommended)
 
