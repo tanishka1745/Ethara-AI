@@ -2,55 +2,6 @@
 
 A full-stack web application for managing inventory with a FastAPI backend, React frontend, and PostgreSQL database. Includes product management, customer management, and order processing with automatic inventory reduction.
 
-## 🎯 Features
-
-✅ **Product Management**
-- Create, read, update, and delete products
-- SKU validation and unique constraint
-- Real-time inventory tracking
-- Low stock alerts
-
-✅ **Customer Management**
-- Add and manage customers
-- Email validation and uniqueness
-- Phone number tracking
-
-✅ **Order Management**
-- Create orders with multiple items
-- Automatic inventory reduction
-- Stock validation before order processing
-- Order history and tracking
-
-✅ **Dashboard Analytics**
-- Total products, customers, and orders overview
-- Low stock product alerts
-- Real-time inventory summary
-
-✅ **API Documentation**
-- Interactive Swagger UI at `/docs`
-- RESTful API endpoints
-- Proper HTTP status codes and error handling
-
-## 📋 Tech Stack
-
-### Backend
-- **Framework**: FastAPI (modern, fast, production-ready)
-- **ORM**: SQLAlchemy (flexible database abstraction)
-- **Validation**: Pydantic (data validation with type hints)
-- **Database**: PostgreSQL (production) / SQLite (development)
-- **Server**: Uvicorn (ASGI server)
-
-### Frontend
-- **Framework**: React 18 (component-based UI)
-- **HTTP Client**: Axios (API communication)
-- **Styling**: CSS3 (custom styling)
-- **Navigation**: React Router (page routing)
-
-### DevOps
-- **Containerization**: Docker & Docker Compose
-- **Database**: PostgreSQL 15 Alpine
-- **Node Version**: 18-Alpine
-- **Python Version**: 3.11-Slim
 
 ## 🚀 Quick Start
 
@@ -197,65 +148,9 @@ PUT    /products/{id}               # Update product
 DELETE /products/{id}               # Delete product
 ```
 
-**Create Product Example:**
-```json
-POST /products
-{
-  "name": "Laptop",
-  "sku": "LAP-001",
-  "price": 999.99,
-  "quantity": 50
-}
-```
 
-### Customers
 
-```
-POST   /customers                    # Create customer
-GET    /customers                    # List customers (paginated)
-GET    /customers/{id}              # Get customer by ID
-PUT    /customers/{id}              # Update customer
-DELETE /customers/{id}              # Delete customer
-```
-
-**Create Customer Example:**
-```json
-POST /customers
-{
-  "full_name": "John Doe",
-  "email": "john@example.com",
-  "phone": "+1234567890"
-}
-```
-
-### Orders
-
-```
-POST   /orders                       # Create order (with inventory validation)
-GET    /orders                       # List orders (paginated)
-GET    /orders/{id}                 # Get order by ID
-DELETE /orders/{id}                 # Delete order
-```
-
-**Create Order Example:**
-```json
-POST /orders
-{
-  "customer_id": 1,
-  "items": [
-    {
-      "product_id": 1,
-      "quantity": 2
-    },
-    {
-      "product_id": 2,
-      "quantity": 1
-    }
-  ]
-}
-```
-
-## 🔒 Validation & Business Logic
+## Validation & Business Logic
 
 ### Product Validation
 - Name: Required, non-empty string (1-255 chars)
@@ -519,42 +414,10 @@ docker-compose logs -f
 # Reset database: docker-compose down -v
 ```
 
-## 📚 Additional Resources
+ScreenSort of APIs
 
-- [FastAPI Documentation](https://fastapi.tiangolo.com/)
-- [React Documentation](https://react.dev/)
-- [SQLAlchemy ORM](https://docs.sqlalchemy.org/)
-- [PostgreSQL Documentation](https://www.postgresql.org/docs/)
-- [Docker Compose Guide](https://docs.docker.com/compose/)
+<img width="919" height="439" alt="product-api-ss" src="https://github.com/user-attachments/assets/b6291c3c-8ddb-4c85-b9ae-2de41488946c" />
+<img width="902" height="373" alt="customer-api-ss" src="https://github.com/user-attachments/assets/1a1b6da0-478b-4891-a3d2-f32de18aaa36" />
+<img width="933" height="217" alt="docker" src="https://github.com/user-attachments/assets/bdc76612-04ec-45a9-a6c4-38c4522f446e" />
 
-## 🎓 Learning Outcomes
-
-By working with this project, you'll learn:
-- ✅ Building RESTful APIs with FastAPI
-- ✅ Database design and SQLAlchemy ORM
-- ✅ Pydantic for data validation
-- ✅ Building React UIs with hooks
-- ✅ API integration with Axios
-- ✅ Docker containerization
-- ✅ Docker Compose for multi-container apps
-- ✅ Production deployment strategies
-- ✅ Error handling and validation
-- ✅ Business logic implementation
-
-## 📄 License
-
-MIT License - feel free to use this project for learning and development.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 👤 Author
-
-Created as a full-stack inventory management system demonstration.
-
----
-
-**Last Updated**: June 2026
-**Version**: 1.0.0
 
