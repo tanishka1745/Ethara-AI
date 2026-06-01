@@ -1,0 +1,80 @@
+.dashboard {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.dashboard h1 {
+  color: #2c3e50;
+  margin-top: 0;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card:nth-child(2) {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.stat-card:nth-child(3) {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.stat-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0.5rem 0 0 0;
+}
+
+.low-stock-section {
+  margin-top: 2rem;
+}
+
+.low-stock-section h2 {
+  color: #2c3e50;
+}
+
+.low-stock-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.low-stock-section th,
+.low-stock-section td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.low-stock-section th {
+  background-color: #ecf0f1;
+  font-weight: bold;
+}
+
+.low-stock {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.low-stock-section tr:hover {
+  background-color: #f9f9f9;
+}

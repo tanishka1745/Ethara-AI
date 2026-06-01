@@ -1,0 +1,46 @@
+.customer-list {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.customer-list h2 {
+  color: #2c3e50;
+  margin-top: 0;
+}
+
+.customer-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.customer-list th,
+.customer-list td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.customer-list th {
+  background-color: #ecf0f1;
+  font-weight: bold;
+}
+
+.customer-list tr:hover {
+  background-color: #f9f9f9;
+}
+
+.customer-list button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.customer-list button:hover {
+  background-color: #c0392b;
+}
