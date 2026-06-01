@@ -1,9 +1,12 @@
 """
 Main application file for Inventory Management System
 """
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+from pydantic import ValidationError
 from app.routes import product_routes, customer_routes, order_routes
+from app.utils.exceptions import InventoryException, handle_inventory_exception
 
 app = FastAPI(
     title="Inventory Management System",
@@ -19,6 +22,21 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Global exception handlers
+@app.exception_handler(InventoryException)
+async def inventory_exception_handler(request: Request, exc: InventoryException):
+    return JSONResponse(
+        status_code=400,
+        content={"detail": str(exc.message)},
+    )
+
+@app.exception_handler(ValidationError)
+async def validation_exception_handler(request: Request, exc: ValidationError):
+    return JSONResponse(
+        status_code=422,
+        content={"detail": exc.errors()},
+    )
 
 # Include routers
 app.include_router(product_routes.router)
