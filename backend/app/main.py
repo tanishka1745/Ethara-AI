@@ -3,8 +3,13 @@ Main application file for Inventory Management System
 """
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from app.routes import product_routes
 
-app = FastAPI(title="Inventory Management System")
+app = FastAPI(
+    title="Inventory Management System",
+    description="Full-stack inventory management API",
+    version="1.0.0"
+)
 
 # CORS middleware configuration
 app.add_middleware(
@@ -14,6 +19,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Include routers
+app.include_router(product_routes.router)
 
 @app.get("/")
 def read_root():
