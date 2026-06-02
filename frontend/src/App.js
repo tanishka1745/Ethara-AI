@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import './App.css';
-import Dashboard from './pages/Dashboard';
-import ProductList from './pages/ProductList';
-import AddProduct from './pages/AddProduct';
-import CustomerList from './pages/CustomerList';
-import AddCustomer from './pages/AddCustomer';
-import OrderPage from './pages/OrderPage';
+import Dashboard from './pages/Dashboard.jsx';
+import ProductList from './pages/ProductList.jsx';
+import AddProduct from './pages/AddProduct.jsx';
+import CustomerList from './pages/CustomerList.jsx';
+import AddCustomer from './pages/AddCustomer.jsx';
+import OrderPage from './pages/OrderPage.jsx';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('dashboard');

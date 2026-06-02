@@ -37,6 +37,10 @@ package-lock.json
 *~
 .DS_Store
 
+# Database
+*.db
+*.db-journal
+
 # Environment
 .env
 .env.local

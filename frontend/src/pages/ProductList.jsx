@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import apiClient from '../api/client';
 import './ProductList.css';
 
 function ProductList() {
@@ -14,7 +14,7 @@ function ProductList() {
   const fetchProducts = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:8000/products/');
+      const response = await apiClient.get('/products/');
       setProducts(response.data);
       setError(null);
     } catch (err) {
@@ -26,7 +26,7 @@ function ProductList() {
 
   const deleteProduct = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/products/${id}`);
+      await apiClient.delete(`/products/${id}`);
       setProducts(products.filter(p => p.id !== id));
     } catch (err) {
       setError('Failed to delete product');

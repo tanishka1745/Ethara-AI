@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import apiClient from '../api/client';
 import './AddCustomer.css';
 
 function AddCustomer({ onCustomerAdded }) {
@@ -25,7 +25,7 @@ function AddCustomer({ onCustomerAdded }) {
     setSuccess(false);
 
     try {
-      const response = await axios.post('http://localhost:8000/customers/', formData);
+      const response = await apiClient.post('/customers/', formData);
       
       setSuccess(true);
       setFormData({ full_name: '', email: '', phone: '' });

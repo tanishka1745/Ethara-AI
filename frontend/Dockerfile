@@ -1,25 +1,7 @@
-# Build stage
-FROM node:18-alpine AS builder
-
-WORKDIR /app
-
-COPY package*.json ./
-
-RUN npm ci
-
-COPY . .
-
-RUN npm run build
-
-# Runtime stage
 FROM node:18-alpine
-
 WORKDIR /app
-
-RUN npm install -g serve
-
-COPY --from=builder /app/build ./build
-
+COPY package*.json ./
+RUN npm install --legacy-peer-deps --omit=dev 2>/dev/null || npm install --legacy-peer-deps
+COPY . .
 EXPOSE 3000
-
-CMD ["serve", "-s", "build", "-l", "3000"]
+CMD ["npm", "start"]

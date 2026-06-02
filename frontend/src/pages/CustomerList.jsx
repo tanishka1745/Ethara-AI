@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import apiClient from '../api/client';
 import './CustomerList.css';
 
 function CustomerList() {
@@ -14,7 +14,7 @@ function CustomerList() {
   const fetchCustomers = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:8000/customers/');
+      const response = await apiClient.get('/customers/');
       setCustomers(response.data);
       setError(null);
     } catch (err) {
@@ -26,7 +26,7 @@ function CustomerList() {
 
   const deleteCustomer = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/customers/${id}`);
+      await apiClient.delete(`/customers/${id}`);
       setCustomers(customers.filter(c => c.id !== id));
     } catch (err) {
       setError('Failed to delete customer');

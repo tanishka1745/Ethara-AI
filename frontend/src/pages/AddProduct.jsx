@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import apiClient from '../api/client';
 import './AddProduct.css';
 
 function AddProduct({ onProductAdded }) {
@@ -26,7 +26,7 @@ function AddProduct({ onProductAdded }) {
     setSuccess(false);
 
     try {
-      const response = await axios.post('http://localhost:8000/products/', {
+      const response = await apiClient.post('/products/', {
         name: formData.name,
         sku: formData.sku,
         price: parseFloat(formData.price),

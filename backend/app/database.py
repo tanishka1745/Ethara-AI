@@ -8,6 +8,8 @@ import os
 
 # Database URL from environment variables
 DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./test.db")
+if os.getenv("VERCEL") and DATABASE_URL == "sqlite:///./test.db":
+    DATABASE_URL = "sqlite:////tmp/test.db"
 
 engine = create_engine(
     DATABASE_URL, connect_args={"check_same_thread": False} if "sqlite" in DATABASE_URL else {}

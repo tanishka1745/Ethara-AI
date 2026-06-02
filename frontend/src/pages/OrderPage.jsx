@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import apiClient from '../api/client';
 import './OrderPage.css';
 
 function OrderPage() {
@@ -13,17 +13,25 @@ function OrderPage() {
 
   useEffect(() => {
     fetchCustomersAndProducts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    calculateTotal();
+    let total = 0;
+    orderItems.forEach(item => {
+      const product = products.find(p => p.id === item.product_id);
+      if (product) {
+        total += product.price * item.quantity;
+      }
+    });
+    setTotalAmount(total);
   }, [orderItems, products]);
 
   const fetchCustomersAndProducts = async () => {
     try {
       const [customersRes, productsRes] = await Promise.all([
-        axios.get('http://localhost:8000/customers/'),
-        axios.get('http://localhost:8000/products/'),
+        apiClient.get('/customers/'),
+        apiClient.get('/products/'),
       ]);
       setCustomers(customersRes.data);
       setProducts(productsRes.data);
@@ -33,16 +41,6 @@ function OrderPage() {
     }
   };
 
-  const calculateTotal = () => {
-    let total = 0;
-    orderItems.forEach(item => {
-      const product = products.find(p => p.id === item.product_id);
-      if (product) {
-        total += product.price * item.quantity;
-      }
-    });
-    setTotalAmount(total);
-  };
 
   const handleAddItem = () => {
     setOrderItems([...orderItems, { product_id: null, quantity: 1 }]);
@@ -74,7 +72,7 @@ function OrderPage() {
     }
 
     try {
-      await axios.post('http://localhost:8000/orders/', {
+      await apiClient.post('/orders/', {
         customer_id: selectedCustomer,
         items: orderItems,
       });
