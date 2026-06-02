@@ -420,3 +420,8 @@ ScreenSort of APIs
 <img width="919" height="439" alt="product-api-ss" src="https://github.com/user-attachments/assets/b6291c3c-8ddb-4c85-b9ae-2de41488946c" />
 <img width="902" height="373" alt="customer-api-ss" src="https://github.com/user-attachments/assets/1a1b6da0-478b-4891-a3d2-f32de18aaa36" />
 <img width="933" height="217" alt="docker" src="https://github.com/user-attachments/assets/bdc76612-04ec-45a9-a6c4-38c4522f446e" />
+
+
+Frontend Screenshot
+<img width="956" height="449" alt="inventory-frontned" src="https://github.com/user-attachments/assets/12eddf83-a6c2-45d6-ba47-3455149155e6" />
+
