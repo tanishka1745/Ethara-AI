@@ -246,7 +246,7 @@ docker run -p 3000:3000 inventory-frontend:latest
 
 ## 🚢 Deployment
 
-### Backend Deployment (Render/Railway)
+### Backend Deployment
 
 1. Push code to GitHub
 2. Create new Web Service on Render/Railway
